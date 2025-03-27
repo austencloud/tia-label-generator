@@ -6,7 +6,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
 from card_layout import CardLayout
-from card_renderer import CardRenderer
+from card_renderer.card_renderer import CardRenderer
 from font_manager import FontManager
 from items import ITEMS
 from title_page_renderer import TitlePageRenderer
