@@ -47,14 +47,17 @@ class DisplayCardGenerator:
         )
         
         # Generate all cards
-        for i, (category, item) in enumerate(ITEMS):
+        for i, item_data in enumerate(ITEMS):
+            # Unpack the item data (now includes fun fact)
+            category, item_name, fun_fact = item_data
+            
             # Calculate position
             x, y = self.layout.calculate_card_position(
                 i, margin_x, margin_y, self.page_height
             )
             
             # Draw card
-            self.card_renderer.draw_card(x, y, category, item)
+            self.card_renderer.draw_card(x, y, category, item_name, fun_fact)
             
             # Start a new page after filling the current page
             if (i + 1) % self.layout.cards_per_page == 0 and i < len(ITEMS) - 1:

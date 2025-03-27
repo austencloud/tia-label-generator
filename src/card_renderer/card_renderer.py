@@ -22,21 +22,12 @@ class CardRenderer:
         self.text_renderer = TextRenderer(canvas, layout)
         self.accent_renderer = AccentRenderer(canvas)
 
-    def draw_card(self, x, y, category, item_name):
+    def draw_card(self, x, y, category, item_name, fun_fact):
         color_scheme = get_category_colors(category)
         self.shadow_renderer.draw(x + 2, y - 2, self.layout.card_width, self.layout.card_height, color_scheme["border_color"])
         self.background_renderer.draw(x, y, color_scheme)
         self.pattern_renderer.draw(x + 5, y + 5, self.layout.card_width - 10, self.layout.card_height - 10, color_scheme["pattern_color"])
         self.header_renderer.draw(x, y, category, color_scheme)
-        self.divider_renderer.draw(x + 5, y + self.layout.card_height - self.layout.header_height - 5, self.layout.card_width - 10, color_scheme["border_color"])
-        self.text_renderer.draw(x, y, item_name, color_scheme)
+        # self.divider_renderer.draw(x + 5, y + self.layout.card_height - self.layout.header_height - 5, self.layout.card_width - 10, color_scheme["border_color"])
+        self.text_renderer.draw(x, y, item_name, fun_fact, color_scheme)
         self.accent_renderer.draw(x, y, self.layout.card_width, self.layout.card_height, color_scheme["border_color"])
-
-
-
-
-
-
-
-
-

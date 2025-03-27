@@ -43,3 +43,9 @@ class FontManager:
         """Get the appropriate item name font for a category."""
         # This could be expanded to use different fonts for different categories
         return "DejaVuSans-Bold"
+        
+    @staticmethod
+    def get_fact_font(category):
+        """Get the appropriate fun fact font for a category."""
+        # Use DejaVuSans for facts (the -Oblique suffix will be added for italics)
+        return "DejaVuSans"
